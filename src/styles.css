@@ -11,7 +11,7 @@
     margin: 0 auto;
   }
   
-  .new-item-form {
+  .new-task-form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -49,7 +49,7 @@
     background: hsl(0, 100%, 40%, 0.2);
   }
   
-  .new-item-form input {
+  .new-task-form input {
     outline: none;
     border: 1px solid hsl(200, 100%, 40%);
     background: hsl(200, 100%, 30%);
@@ -58,7 +58,7 @@
     color: hsl(200, 100%, 90%);
   }
   
-  .new-item-form input:focus {
+  .new-task-form input:focus {
     border: 1px solid hsl(200, 100%, 70%);
   }
   
