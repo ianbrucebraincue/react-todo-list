@@ -10,7 +10,7 @@ export default function App() {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("TASKS")
     if (localValue == null) return []
-    
+
     return JSON.parse(localValue)
   })
 
@@ -33,13 +33,24 @@ export default function App() {
 
   function toggleTodo(id, completed) {
     setTodos(currentTodos => {
-      return currentTodos.map(todo => {
+      const updatedTodos = currentTodos.map(todo => {
         if (todo.id === id) {
           return { ...todo, completed }
         }
 
         return todo
       })
+
+      const completedTodo = updatedTodos.find(todo => todo.id === id)
+
+      if (completedTodo.completed) {
+        const filteredTodos = updatedTodos.filter(todo => todo.id !== id)
+        const todosWithCompletedAtTheEnd = [...filteredTodos, completedTodo]
+
+        return todosWithCompletedAtTheEnd
+      }
+
+      return updatedTodos
     })
   }
 
