@@ -14,19 +14,19 @@ export function NewTodoForm({ onSubmit }) {
     }
 
     return (
-    <form className="new-task-form">
-        <div className="form-row">
-            <label htmlFor="task">New Task</label>
-            <input 
-            value={newTask} 
-            onChange={e => setNewTask(e.target.value)} 
-            type="text" 
-            id="task" 
-            />
-        </div>
-        <button 
-        onClick={handleSubmit}
-        className="btn">Add</button>
-    </form>
+        <form className="new-task-form">
+            <div className="form-row">
+                <label htmlFor="task">New Task</label>
+                <input 
+                value={newTask} 
+                onChange={e => setNewTask(e.target.value)} 
+                type="text" 
+                id="task" 
+                />
+            </div>
+            <button 
+            onClick={handleSubmit}
+            className="btn">Add</button>
+        </form>
     )
 }
